@@ -35,10 +35,9 @@
     {#each data.data as item}
         {#if item.Meal_Number === mealNumber && item.Location_Name === location && (item.Menu_Category_Name === mealCategoryFilter || mealCategoryFilter === "all")}
             <li class="pb-2">
-                <span class="badge bg-primary-500">💀</span>
+                <span class="badge bg-secondary-500">🤯</span>
                 <span class="flex-auto font-bold">
                     <dt class="inline-flex pb-1">
-
                         {item.Recipe_Print_As_Name}
                             <span class="hidden lg:inline-flex align-middle">
                                 {#if item.Recipe_Web_Codes.split(" ")[0] !== ""}

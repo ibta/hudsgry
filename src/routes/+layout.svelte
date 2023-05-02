@@ -28,10 +28,10 @@
 <AppShell on:scroll={scrollHandler}>
     <div bind:this={element}></div>
     <svelte:fragment slot="header">
-        <div class="{showHeader ? 'display' : 'hidden'}">
-            <a on:click={() => element.scrollIntoView({"behavior": "smooth"})}>
-                <img src="icons/crab.png" alt="crab because why not? click to go to the top"> TO THE TOP!
-            </a>
+        <div class="grid grid-cols-12 bg-transparent">
+            <div class="{showHeader ? 'display' : 'hidden'} col-span-2 bg-transparent">
+                <button type="button" on:click={() => element.scrollIntoView({"behavior": "smooth"})} class="btn btn-sm variant-filled"><img class="inline-flex" src="icons/crab.png" alt="crab because why not? click to go to the top"> UP!!</button>
+            </div>
         </div>
     </svelte:fragment>
 

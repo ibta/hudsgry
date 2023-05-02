@@ -65,6 +65,7 @@
                                 <FoodList data={data} mealNumber={1} location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/angry_cat.png"
                                                               alt="an upset cat because i want hot breakfast at my non-quincy non-annenberg house"
@@ -89,6 +90,7 @@
                                 <FoodList data={data} mealNumber={2} mealCategoryFilter="Starch And Potatoes" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/soup.png" alt="soup representing the soups and chilis" height="32px" width="32px"></svelte:fragment>
                             <svelte:fragment slot="summary">soups + chili</svelte:fragment>
@@ -97,6 +99,7 @@
                                 <FoodList data={data} mealNumber={2} mealCategoryFilter="Chili Bar" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/salad.png" alt="salad bowl to represent salad bar" height="32px" width="32px"></svelte:fragment>
                             <svelte:fragment slot="summary">salad bar n stuff</svelte:fragment>
@@ -104,6 +107,7 @@
                                 <FoodList data={data} mealNumber={2} mealCategoryFilter="Salad Bar" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/sandwich.png" alt="a sandwich to represent the sandwich/deli section"> </svelte:fragment>
                             <svelte:fragment slot="summary">sandwich/deli</svelte:fragment>
@@ -111,6 +115,7 @@
                                 <FoodList data={data} mealNumber={2} mealCategoryFilter="Sand/ Deli" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/ice-cream.png" alt="ice cream for huds froyo"> </svelte:fragment>
                             <svelte:fragment slot="summary">dessert</svelte:fragment>
@@ -133,6 +138,7 @@
                                 <FoodList data={data} mealNumber={3} mealCategoryFilter="Starch And Potatoes" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/soup.png" alt="soup representing the soups and chilis AND pasta" height="32px" width="32px"></svelte:fragment>
                             <svelte:fragment slot="summary">soups + chili + pasta</svelte:fragment>
@@ -142,6 +148,7 @@
                                 <FoodList data={data} mealNumber={3} mealCategoryFilter="Whole Grain Pasta Bar" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/salad.png" alt="salad bowl to represent salad bar" height="32px" width="32px"></svelte:fragment>
                             <svelte:fragment slot="summary">salad bar n stuff</svelte:fragment>
@@ -149,6 +156,7 @@
                                 <FoodList data={data} mealNumber={3} mealCategoryFilter="Salad Bar" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/burger.png" alt="a burger to represent the grill section"> </svelte:fragment>
                             <svelte:fragment slot="summary">grill</svelte:fragment>
@@ -156,6 +164,7 @@
                                 <FoodList data={data} mealNumber={3} mealCategoryFilter="From the Grill" location={"Cabot and Pforzheimer House"}/>
                             </svelte:fragment>
                         </AccordionItem>
+                        <hr>
                         <AccordionItem>
                             <svelte:fragment slot="lead"><img src="icons/ice-cream.png" alt="ice cream for huds froyo"> </svelte:fragment>
                             <svelte:fragment slot="summary">dessert</svelte:fragment>
