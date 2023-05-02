@@ -19,6 +19,8 @@ export async function load({ fetch }) {
 	let timeOfDay = 0;
 
 	const date = dateTime.replaceAll('/', '_');
+
+	// Based on time of day choose the right tba
 	if (hours < 11) {
 		timeOfDay = 0;
 	} else if (hours < 15) {
@@ -29,7 +31,7 @@ export async function load({ fetch }) {
 	// console.log(timeOfDay)
 	const res = await fetch(`/data/${date}.json`);
 	const data = await res.json();
-	return { data };
+	return { data, timeOfDay };
 	// .then(res => res.json())
 	// .then(data => {
 	//     console.log(data)

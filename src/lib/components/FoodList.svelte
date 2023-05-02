@@ -2,6 +2,7 @@
     export let data;
     export let location;
     export let mealNumber;
+    export let mealCategoryFilter = "all";
 
     // Unused function for now, but leaving in case things break
     // function splitString(stringToSplit, separator) {
@@ -32,11 +33,12 @@
 
 <dl class="list-dl container flex-wrap">
     {#each data.data as item}
-        {#if item.Meal_Number === mealNumber && item.Location_Name === location}
+        {#if item.Meal_Number === mealNumber && item.Location_Name === location && (item.Menu_Category_Name === mealCategoryFilter || mealCategoryFilter === "all")}
             <li class="pb-2">
                 <span class="badge bg-primary-500">💀</span>
                 <span class="flex-auto font-bold">
                     <dt class="inline-flex pb-1">
+
                         {item.Recipe_Print_As_Name}
                             <span class="hidden lg:inline-flex align-middle">
                                 {#if item.Recipe_Web_Codes.split(" ")[0] !== ""}
