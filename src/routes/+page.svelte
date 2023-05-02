@@ -53,7 +53,9 @@
             <Tab bind:group={tabSet} name="dinner" value={2}><img class="inline-flex" src="icons/ramen.png">  dinner</Tab>
 <!--            <Tab justify="justify-center" name="toggle" on:click={handleShowAll}>Show all</Tab>-->
 <!--            <Tab justify="justify-center" name="toggle">Collapse</Tab>-->
+
             <svelte:fragment slot="panel">
+                <hr>
                 {#if tabSet === 0}
                     <Accordion>
                         <AccordionItem>
