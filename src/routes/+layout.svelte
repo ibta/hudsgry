@@ -10,7 +10,7 @@
     let element;
     let showHeader = false;
     function scrollHandler(event: UIEvent & { currentTarget: EventTarget & HTMLDivElement; }) {
-        console.log(event.currentTarget.scrollTop);
+        // console.log(event.currentTarget.scrollTop);
         showHeader = event.currentTarget.scrollTop > 400;
     }
 
