@@ -28,7 +28,7 @@
 <AppShell on:scroll={scrollHandler}>
     <div bind:this={element}></div>
     <svelte:fragment slot="header">
-        <div class="{showHeader ? 'display' : 'hidden'} lg:hidden">
+        <div class="{showHeader ? 'display' : 'hidden'}">
             <a on:click={() => element.scrollIntoView({"behavior": "smooth"})}>
                 <img src="icons/crab.png" alt="crab because why not? click to go to the top"> TO THE TOP!
             </a>
