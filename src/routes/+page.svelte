@@ -14,6 +14,7 @@
     data = { data: data.data }
 
 
+
     // console.log(data);
     console.log(timeOfDay)
     console.log(data)
@@ -37,7 +38,8 @@
         <h1 class="text-6xl font-bold">huds.wtf</h1>
         <h4 class="font-bold">because that's what it feels like to use the api.</h4>
         <br>
-        <h5 class="font-bold text-warning-500">so technically today for dinner, there is a "special menu" (not reflected here) <span class="text-xs">probably</span></h5>
+
+        <h5 class="font-bold text-warning-500">so technically today (5/2) for dinner, there is a "special menu" (not reflected here) <span class="text-xs">probably</span></h5>
     </div>
     <br>
     <div class="w-full text-token">
