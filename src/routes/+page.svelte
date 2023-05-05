@@ -147,25 +147,9 @@
         <br>
     </div>
     <br>
-    <div class="">
-        <a href={prevDay} class="lb btn btn-sm bg-primary-500 float-left ml-5 lg:ml-0 mb-4 p-3" data-sveltekit-prefetch="hover">
-            <svg class="mr-2 arrow-left-move" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-            </svg>
-            Previous Day
-        </a>
-        <a href={nextDay} class="rb btn btn-sm bg-primary-500 float-right mr-5 lg:mr-0 mb-4 p-3" data-sveltekit-prefetch="hover">
-            Next Day
-            <svg class="ml-2 arrow-right-move" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
-            </svg>
-        </a>
-
-    </div>
 
     <!--  CONCEPT: MENU  -->
     <div class="w-full text-token">
-        <!--   SUBCONCEPT: TABS     -->
         <TabGroup active="variant-filled-primary"
                   hover="hover:variant-soft-primary"
                   flex="flex-1 lg:flex-none"
@@ -177,10 +161,8 @@
             <Tab bind:group={tabSet} name="lunch" value={1}><img class="inline-flex" src="icons/chicken.png" width="32px" height="32px">  lunch</Tab>
             <Tab bind:group={tabSet} name="dinner" value={2}><img class="inline-flex" src="icons/ramen.png">  dinner</Tab>
             {#if brainBreak }
-                <Tab bind:group={tabSet} name="brainbreak" value={3}><img class="inline-flex" src="icons/crab.png">  BRAINBREAK!!</Tab>
+                <Tab bind:group={tabSet} name="brainbreak" value={3}><img class="inline-flex" src="icons/crab.png">  ~brain break~</Tab>
             {/if}
-<!--            <Tab justify="justify-center" name="toggle" on:click={handleShowAll}>Show all</Tab>-->
-<!--            <Tab justify="justify-center" name="toggle">Collapse</Tab>-->
 
             <svelte:fragment slot="panel">
                 <hr>
@@ -206,6 +188,7 @@
                             </svelte:fragment>
                         </AccordionItem>
                     </Accordion>
+                    
                 {:else if tabSet === 1}
                     <Accordion>
                         <AccordionItem>
@@ -249,6 +232,7 @@
                         </AccordionItem>
                         <!-- ... -->
                     </Accordion>
+
                 {:else if tabSet === 2}
                     <Accordion>
                         <AccordionItem>
