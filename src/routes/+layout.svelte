@@ -8,10 +8,10 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
     let element;
-    let showHeader = false;
+    let showButton = false;
     function scrollHandler(event: UIEvent & { currentTarget: EventTarget & HTMLDivElement; }) {
         // console.log(event.currentTarget.scrollTop);
-        showHeader = event.currentTarget.scrollTop > 400;
+        showButton = event.currentTarget.scrollTop > 400;
     }
 
     const scrollToTop = node => {
@@ -25,17 +25,31 @@
     };
 </script>
 
-<AppShell on:scroll={scrollHandler}>
-    <div bind:this={element}></div>
-    <svelte:fragment slot="header">
-        <div class="grid grid-cols-12 bg-transparent">
-            <div class="{showHeader ? 'display' : 'hidden'} col-span-2 bg-transparent">
-                <button type="button" on:click={() => element.scrollIntoView({"behavior": "smooth"})} class="btn btn-sm variant-filled"><img class="inline-flex" src="icons/crab.png" alt="crab because why not? click to go to the top"> UP!!</button>
-            </div>
-        </div>
-    </svelte:fragment>
+<style>
+    /* https://codepen.io/alianmorales/pen/GyrgjO */
+    @keyframes slide1 {
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
 
-    <slot />
+        50% {
+            transform: translate(10px, 0);
+        }
+    }
+</style>
+
+<AppShell on:scroll={scrollHandler} class="grid">
+    <div bind:this={element}></div>
+    <svelte:fragment slot="header"></svelte:fragment>
+    <div class="grid">
+        <slot />
+    </div>
+    <div class="{showButton ? 'display' : 'hidden'} grid grid-cols-5 lg:grid-cols-11 bottom-0 left-0 sticky p-6">
+        <button type="button" on:click={() => element.scrollIntoView({"behavior": "smooth"})} class="btn btn-sm bg-primary-500 lg:col-span-1 lg:col-start-6 col-start-3">
+            <img class="inline-block" src="icons/crab.png" alt="crab because why not? click to go to the top"> UP!!
+        </button>
+    </div>
     <svelte:fragment slot="pageFooter">
         <br>
         <br>
@@ -43,4 +57,6 @@
             for attribution purposes, ALL icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
         </div>
     </svelte:fragment>
+
+
 </AppShell>

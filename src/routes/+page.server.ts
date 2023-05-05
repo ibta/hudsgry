@@ -7,7 +7,7 @@
 */
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ fetch }) {
+export async function load({ fetch, params }) {
 	const now = new Date();
 	const dateTime = now.toLocaleString('en-us', {
 		hour12: false,
@@ -18,7 +18,7 @@ export async function load({ fetch }) {
 	const hours = now.getHours();
 	let timeOfDay = 0;
 
-	const date = dateTime.replaceAll('/', '_');
+	const date = dateTime;
 
 	// Based on time of day choose the right tba
 	if (hours < 11) {
@@ -28,9 +28,14 @@ export async function load({ fetch }) {
 	} else {
 		timeOfDay = 2;
 	}
-	// console.log(timeOfDay)
-	const res = await fetch(`/data/${date}.json`);
+	// console.log(date);
+	const res = await fetch(`https://hudsgry-api.fly.dev/huds-data?serve_date=${date}`);
 	const data = await res.json();
+
+	console.log(params.date);
+	console.log(params.date);
+
+	// data = JSON.parse(data);
 	return { data, timeOfDay };
 	// .then(res => res.json())
 	// .then(data => {

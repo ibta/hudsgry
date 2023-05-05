@@ -1,8 +1,8 @@
 <script>
     export let data;
-    export let location;
-    export let mealNumber;
-    export let mealCategoryFilter = "all";
+    export let mealName;
+    export let categoryMap;
+
 
     // Unused function for now, but leaving in case things break
     // function splitString(stringToSplit, separator) {
@@ -32,56 +32,43 @@
 </script>
 
 <dl class="list-dl container flex-wrap">
-    {#each data.data as item}
-        {#if item.Meal_Number === mealNumber && item.Location_Name === location && (item.Menu_Category_Name === mealCategoryFilter || mealCategoryFilter === "all")}
+    {#each data as item}
+        {#if categoryMap[mealName].includes(item.Menu_Category_Name) }
             <li class="pb-2">
-                <span class="badge bg-secondary-500">🤯</span>
+<!--                <span class="badge bg-secondary-500">🤯</span>-->
                 <span class="flex-auto font-bold">
                     <dt class="inline-flex pb-1">
-                        {item.Recipe_Print_As_Name}
-                            <span class="hidden lg:inline-flex align-middle">
-                                {#if item.Recipe_Web_Codes.split(" ")[0] !== ""}
-                                    {#if item.Recipe_Web_Codes.split(" ").includes("VGT")}
-                                        <img class="ml-1 mr-0.5" src="icons/no-meat.png" alt="vegetarian" height="24px" width="24px">
-                                    {/if}
-                                    {#if item.Recipe_Web_Codes.split(" ").includes("VGN")}
-                                        <img class="mr-0.5 ml-0.5" src="icons/vegan.png" alt="vegan" height="24px" width="24px">
-                                    {/if}
+                        {item.Food_Name}
+                        <span class="hidden lg:inline-flex align-middle">
+                                {#if item.Vegetarian}
+                                    <img class="ml-1 mr-0.5" src="icons/no-meat.png" alt="vegetarian" height="24px"
+                                         width="24px">
+                                {/if}
+                            {#if item.Vegan}
+                                    <img class="mr-0.5 ml-0.5" src="icons/vegan.png" alt="vegan" height="24px"
+                                         width="24px">
                                 {/if}
                             </span>
-                            <!-- an attempt to make it so that icons are pushed to the right on mobile -->
-                            <span class="inline-flex align-middle ml-auto lg:hidden">
-                                {#if item.Recipe_Web_Codes.split(" ")[0] !== ""}
-                                    {#if item.Recipe_Web_Codes.split(" ").includes("VGT")}
-                                        <img class="mr-0.5 ml-1" src="icons/no-meat.png" alt="vegetarian" height="24px" width="24px">
-                                    {/if}
-                                    {#if item.Recipe_Web_Codes.split(" ").includes("VGN")}
-                                        <img class="mr-0.5 ml-0.5" src="icons/vegan.png" alt="vegan" height="24px" width="24px">
-                                    {/if}
+                        <!-- an attempt to make it so that icons are pushed to the right on mobile -->
+                         <span class="inline-flex align-middle ml-auto lg:hidden">
+                                {#if item.Vegetarian}
+                                    <img class="ml-1 mr-0.5" src="icons/no-meat.png" alt="vegetarian" height="24px"
+                                         width="24px">
                                 {/if}
-                            </span>
+                                {#if item.Vegan}
+                                    <img class="mr-0.5 ml-0.5" src="icons/vegan.png" alt="vegan" height="24px"
+                                         width="24px">
+                                {/if}
+                         </span>
                     </dt>
                     {#if item.Allergens !== ""}
                         <dd class="text-red-500 text-sm">
                             ⚠️ Contains {item.Allergens.replaceAll(",", "").trim().replaceAll(" ", ", ")}
-                            <!--{#if item.Allergens.replaceAll(",", "").trim().replaceAll(" ", ", ").length > 24}-->
-                            <!--    {#each splitString(item.Allergens.replaceAll(",", "").trim().replaceAll(" ", ", "), ", ") as allergen}-->
-                            <!--        {#if allergen !== "noBreak"}-->
-                            <!--            {allergen}-->
-                            <!--            <br>-->
-                            <!--        {/if}-->
-                            <!--    {/each}-->
-                            <!--    &lt;!&ndash;{item.Allergens.replaceAll(",", "").trim().replaceAll(" ", ", ").split(", ")}&ndash;&gt;-->
-                            <!--    &lt;!&ndash;<br>&ndash;&gt;-->
-                            <!--    &lt;!&ndash;{item.Allergens.replaceAll(",", "").trim().replaceAll(" ", ", ").substring(30)}&ndash;&gt;-->
-                            <!--{:else}-->
-                            <!--    {item.Allergens.replaceAll(",", "").trim().replaceAll(" ", ", ")}-->
-                            <!--{/if}-->
                         </dd>
                     {/if}
                 </span>
             </li>
-
         {/if}
+
     {/each}
 </dl>
